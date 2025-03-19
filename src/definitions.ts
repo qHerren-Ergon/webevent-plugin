@@ -1,3 +1,17 @@
+import {PluginListenerHandle} from "@capacitor/core";
+
 export interface webeventPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  eventSender(): Promise<void>;
+
+  eventSenderWithTimer(): Promise<void>;
+
+  addListener(
+      eventName: 'sendEvent',
+      listenerFunc: (value: string) => void,
+  ): Promise<PluginListenerHandle>;
+
+  addListener(
+      eventName: 'sendEventWithTimer',
+      listenerFunc: (value: string) => void,
+  ): Promise<PluginListenerHandle>;
 }
