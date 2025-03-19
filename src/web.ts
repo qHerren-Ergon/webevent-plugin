@@ -9,7 +9,7 @@ export class webeventWeb extends WebPlugin implements webeventPlugin {
   }
 
   async eventSenderWithTimer(time:string): Promise<void> {
-    setTimeout(() => this.notifyListeners("sendEvent", { value: "event 2", time: time}, true), 5000);
+    setTimeout(() => this.notifyListeners("sendEventWithTimer", { value: "event 2", time: time}, true), 5000);
     return Promise.resolve();
   }
 }
